@@ -1,0 +1,17 @@
+.metric {
+    border: 1px solid #dddbda;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    background: #ffffff;
+}
+.metric-label {
+    color: #3e3e3c;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+.metric-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.75rem;
+}

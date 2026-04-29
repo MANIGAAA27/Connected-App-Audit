@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>App_External_Id__c</fullName>
+    <label>App External Id</label>
+    <type>Text</type>
+    <length>255</length>
+    <unique>false</unique>
+    <externalId>false</externalId>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+</CustomField>

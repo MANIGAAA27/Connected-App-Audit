@@ -1,0 +1,139 @@
+<template>
+    <lightning-card title={labels.CAAG_Dashboard_Title} icon-name="standard:connected_apps">
+        <div class="slds-p-horizontal_medium slds-p-vertical_small">
+            <div class="slds-grid slds-wrap slds-gutters slds-m-bottom_small">
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                    <lightning-input type="search"
+                                     label={labels.CAAG_Search_Label}
+                                     value={searchKey}
+                                     onchange={handleSearchChange}>
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                    <lightning-combobox label={labels.CAAG_Status_Filter}
+                                        value={statusFilter}
+                                        options={statusOptions}
+                                        onchange={handleStatusChange}>
+                    </lightning-combobox>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-align_absolute-center">
+                    <lightning-button label={labels.CAAG_Refresh}
+                                      title={labels.CAAG_Refresh}
+                                      onclick={handleRefresh}
+                                      variant="brand">
+                    </lightning-button>
+                </div>
+            </div>
+
+            <template if:true={summary}>
+                <div class="slds-grid slds-wrap slds-gutters slds-m-bottom_medium">
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4">
+                        <div class="metric">
+                            <div class="metric-label">{labels.CAAG_Metric_Total}</div>
+                            <div class="metric-value">{summary.total}</div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4">
+                        <div class="metric">
+                            <div class="metric-label">{labels.CAAG_Metric_Active}</div>
+                            <div class="metric-value">{summary.active}</div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4">
+                        <div class="metric">
+                            <div class="metric-label">{labels.CAAG_Metric_Dormant}</div>
+                            <div class="metric-value">{summary.dormant}</div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4">
+                        <div class="metric">
+                            <div class="metric-label">{labels.CAAG_Metric_Obsolete}</div>
+                            <div class="metric-value">{summary.obsolete}</div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <template if:true={error}>
+                <div class="slds-text-color_error slds-m-bottom_small">
+                    {error}
+                </div>
+            </template>
+
+            <template if:true={rows}>
+                <lightning-datatable key-field="id"
+                                     data={rows}
+                                     columns={columns}
+                                     hide-checkbox-column
+                                     onrowaction={handleRowAction}>
+                </lightning-datatable>
+            </template>
+
+            <template if:false={rows}>
+                <div class="slds-text-body_regular slds-p-vertical_medium">
+                    {labels.CAAG_No_Results}
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" aria-modal="true" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning-button-icon icon-name="utility:close"
+                                           class="slds-modal__close"
+                                           onclick={closeModal}
+                                           alternative-text={labels.CAAG_Close}>
+                    </lightning-button-icon>
+                    <h2 class="slds-text-heading_medium">{labels.CAAG_Record_Details}</h2>
+                </header>
+
+                <div class="slds-modal__content slds-p-around_medium">
+                    <template if:true={selectedRecord}>
+                        <dl class="slds-list_horizontal slds-wrap">
+                            <dt class="slds-item_label slds-truncate" title={labels.CAAG_Field_AppName}>{labels.CAAG_Field_AppName}</dt>
+                            <dd class="slds-item_detail slds-truncate">{selectedRecord.appName}</dd>
+
+                            <dt class="slds-item_label slds-truncate" title={labels.CAAG_Field_Type}>{labels.CAAG_Field_Type}</dt>
+                            <dd class="slds-item_detail slds-truncate">{selectedRecord.appType}</dd>
+
+                            <dt class="slds-item_label slds-truncate" title={labels.CAAG_Field_Status}>{labels.CAAG_Field_Status}</dt>
+                            <dd class="slds-item_detail slds-truncate">{selectedRecord.status}</dd>
+
+                            <dt class="slds-item_label slds-truncate" title={labels.CAAG_Field_Risk}>{labels.CAAG_Field_Risk}</dt>
+                            <dd class="slds-item_detail slds-truncate">{selectedRecord.risk}</dd>
+
+                            <dt class="slds-item_label slds-truncate" title={labels.CAAG_Field_BusinessOwner}>{labels.CAAG_Field_BusinessOwner}</dt>
+                            <dd class="slds-item_detail slds-truncate">{selectedRecord.businessOwnerName}</dd>
+
+                            <dt class="slds-item_label slds-truncate" title={labels.CAAG_Field_TechnicalOwner}>{labels.CAAG_Field_TechnicalOwner}</dt>
+                            <dd class="slds-item_detail slds-truncate">{selectedRecord.technicalOwnerName}</dd>
+
+                            <dt class="slds-item_label slds-truncate" title={labels.CAAG_Field_LastUsed}>{labels.CAAG_Field_LastUsed}</dt>
+                            <dd class="slds-item_detail slds-truncate">{selectedRecord.lastUsedDate}</dd>
+
+                            <dt class="slds-item_label slds-truncate" title={labels.CAAG_Field_LastReview}>{labels.CAAG_Field_LastReview}</dt>
+                            <dd class="slds-item_detail slds-truncate">{selectedRecord.lastReviewDate}</dd>
+
+                            <dt class="slds-item_label slds-truncate" title={labels.CAAG_Field_Notes}>{labels.CAAG_Field_Notes}</dt>
+                            <dd class="slds-item_detail slds-truncate">{selectedRecord.notes}</dd>
+                        </dl>
+                    </template>
+                </div>
+
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral" label={labels.CAAG_Close} onclick={closeModal}></lightning-button>
+                    <template if:true={selectedRecord}>
+                        <lightning-button variant="brand"
+                                          class="slds-m-left_small"
+                                          label={labels.CAAG_Open_Record}
+                                          onclick={navigateToRecord}>
+                        </lightning-button>
+                    </template>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>
