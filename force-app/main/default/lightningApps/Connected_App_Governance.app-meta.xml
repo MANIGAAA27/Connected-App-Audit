@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Connected App Governance</label>
+    <description>Central workspace for Connected App governance, approvals, and audit evidence.</description>
+    <navigationType>Standard</navigationType>
+    <tab>ConnectedAppInventories</tab>
+    <tab>HighRiskUserExceptions</tab>
+    <tab>dashboards</tab>
+    <tab>reports</tab>
+</LightningApp>

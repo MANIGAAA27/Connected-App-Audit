@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <recordSharing>
+        <ruleName>Share_Inventory_Admins</ruleName>
+        <accessLevel>Edit</accessLevel>
+        <criteriaItems/>
+        <sharedTo>
+            <type>Group</type>
+            <group>Platform Administrators</group>
+        </sharedTo>
+    </recordSharing>
+    <recordSharing>
+        <ruleName>Share_Inventory_Reviewers</ruleName>
+        <accessLevel>Read</accessLevel>
+        <criteriaItems/>
+        <sharedTo>
+            <type>Group</type>
+            <group>Security Reviewers</group>
+        </sharedTo>
+    </recordSharing>
+    <recordSharing>
+        <ruleName>Share_Inventory_Auditors</ruleName>
+        <accessLevel>Read</accessLevel>
+        <criteriaItems/>
+        <sharedTo>
+            <type>Group</type>
+            <group>Compliance Auditors</group>
+        </sharedTo>
+    </recordSharing>
+</SharingRules>

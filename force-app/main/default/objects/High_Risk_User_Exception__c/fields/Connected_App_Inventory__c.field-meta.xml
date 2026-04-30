@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Connected_App_Inventory__c</fullName>
+    <label>Connected App Inventory</label>
+    <type>MasterDetail</type>
+    <referenceTo>Connected_App_Inventory__c</referenceTo>
+    <relationshipLabel>High Risk Exceptions</relationshipLabel>
+    <relationshipName>High_Risk_Exception</relationshipName>
+    <required>true</required>
+</CustomField>

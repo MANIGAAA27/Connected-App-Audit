@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+  <types>
+    <members>App_Risk_Classification__mdt.High.md</members>
+    <members>App_Risk_Classification__mdt.Low.md</members>
+    <members>App_Risk_Classification__mdt.md</members>
+    <members>App_Risk_Classification__mdt.Medium.md</members>
+    <name>CustomMetadata</name>
+  </types>
+  <types>
+    <members>CAI_Approval_Request_Flow</members>
+    <members>CAI_Decommission_Approval_Flow</members>
+    <members>CAI_Scheduled_Periodic_Review_Flow</members>
+    <members>HRUE_Approval_Request_Flow</members>
+    <members>Task_Review_Completion_Flow</members>
+    <name>Flow</name>
+  </types>
+  <types>
+    <members>Connected_App_Inventory__c-Layout</members>
+    <members>High_Risk_User_Exception__c-Layout</members>
+    <name>Layout</name>
+  </types>
+  <types>
+    <members>Connected_App_Inventory__c</members>
+    <members>High_Risk_User_Exception__c</members>
+    <name>CustomObject</name>
+  </types>
+  <version>59.0</version>
+</Package>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <reportType>ConnectedAppInventoryWithHighRisk</reportType>
+    <description>Inventory coverage by lifecycle status.</description>
+    <format>Summary</format>
+    <reportMetadata>
+        <columns>
+            <column>App_Name__c</column>
+        </columns>
+        <columns>
+            <column>Status__c</column>
+        </columns>
+        <detailColumns>App_Name__c</detailColumns>
+        <groupingsAcross>None</groupingsAcross>
+        <groupingsDown>
+            <grouping>
+                <column>Status__c</column>
+            </grouping>
+        </groupingsDown>
+        <reportFilters>
+            <reportFilter>
+                <column>Status__c</column>
+                <operator>notEquals</operator>
+                <value/>
+            </reportFilter>
+        </reportFilters>
+        <rowLimit>-1</rowLimit>
+    </reportMetadata>
+    <dashboardComponents/>
+</Report>

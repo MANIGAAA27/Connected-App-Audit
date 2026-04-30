@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Connected App Governance Reviewer</label>
+    <description>Security Reviewers who approve high-risk access.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <objectPermissions>
+        <object>Connected_App_Inventory__c</object>
+        <allowCreate>false</allowCreate>
+        <allowRead>true</allowRead>
+        <allowEdit>false</allowEdit>
+        <allowDelete>false</allowDelete>
+    </objectPermissions>
+    <objectPermissions>
+        <object>High_Risk_User_Exception__c</object>
+        <allowCreate>true</allowCreate>
+        <allowRead>true</allowRead>
+        <allowEdit>true</allowEdit>
+        <allowDelete>false</allowDelete>
+    </objectPermissions>
+    <userPermissions>
+        <name>ApproveRecords</name>
+        <enabled>true</enabled>
+    </userPermissions>
+</PermissionSet>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>High-level risk indicators for Connected App Governance.</description>
+    <dashboardType>Standard</dashboardType>
+    <folder>unfiled$public</folder>
+    <subtitle>App inventory and exception health</subtitle>
+    <title>Connected App Risk Dashboard</title>
+    <dashboardComponents>
+        <dashboardComponent>
+            <title>Apps by Status</title>
+            <type>Pie</type>
+            <reportName>Connected_App_Status_Report</reportName>
+            <column>App_Name__c</column>
+            <aggregate>COUNT</aggregate>
+        </dashboardComponent>
+    </dashboardComponents>
+</Dashboard>

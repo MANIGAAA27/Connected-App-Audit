@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Risk_Classification__c</fullName>
+    <label>Risk Classification</label>
+    <type>MetadataRelationship</type>
+    <required>true</required>
+    <referenceTo>App_Risk_Classification__mdt</referenceTo>
+</CustomField>

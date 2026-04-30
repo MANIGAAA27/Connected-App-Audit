@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Initiates the decommission approval workflow and tracks the pending status.</description>
+    <label>CAI Decommission Approval Flow</label>
+    <processType>AutolaunchedFlow</processType>
+    <status>Active</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <isRequired>true</isRequired>
+    </variables>
+    <recordLookups>
+        <name>Get_For_Decommission</name>
+        <object>Connected_App_Inventory__c</object>
+        <filters>
+            <field>Id</field>
+            <operator>equals</operator>
+            <value>{!recordId}</value>
+        </filters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <connector>
+            <targetReference>Mark_Pending_Decommission</targetReference>
+        </connector>
+    </recordLookups>
+    <recordUpdates>
+        <name>Mark_Pending_Decommission</name>
+        <object>Connected_App_Inventory__c</object>
+        <recordId>{!Get_For_Decommission.Id}</recordId>
+        <fieldValues>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Pending Decommission</stringValue>
+            </value>
+        </fieldValues>
+    </recordUpdates>
+    <start>
+        <connector>
+            <targetReference>Get_For_Decommission</targetReference>
+        </connector>
+    </start>
+</Flow>

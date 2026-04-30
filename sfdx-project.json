@@ -1,0 +1,15 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true,
+      "package": "Connected_App_Audit_10",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT"
+    }
+  ],
+  "name": "Connected_App_Audit_10",
+  "namespace": "",
+  "sourceApiVersion": "59.0",
+  "sfdcLoginUrl": "https://login.salesforce.com"
+}
