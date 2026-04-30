@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Governance record storing ownership, status, and risk metadata for each protected connected app.</description>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <label>Connected App Inventory</label>
+    <pluralLabel>Connected App Inventories</pluralLabel>
+    <sharingModel>Private</sharingModel>
+    <nameField>
+        <label>Connected App Reference</label>
+        <type>Text</type>
+    </nameField>
+    <fields>
+        <fullName>App_Name__c</fullName>
+        <label>App Name</label>
+        <required>true</required>
+        <type>Text</type>
+        <length>80</length>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>API_Name__c</fullName>
+        <label>API Name</label>
+        <required>true</required>
+        <type>Text</type>
+        <length>80</length>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Business_Owner__c</fullName>
+        <label>Business Owner</label>
+        <required>true</required>
+        <type>Lookup</type>
+        <referenceTo>User</referenceTo>
+    </fields>
+    <fields>
+        <fullName>Technical_Owner__c</fullName>
+        <label>Technical Owner</label>
+        <required>true</required>
+        <type>Lookup</type>
+        <referenceTo>User</referenceTo>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Status</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <defaultValue>Active</defaultValue>
+        <picklist>
+            <picklistValues>
+                <fullName>Active</fullName>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dormant</fullName>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Obsolete</fullName>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending Approval</fullName>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Review</fullName>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending Decommission</fullName>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+            </picklistValues>
+        </picklist>
+    </fields>
+    <fields>
+        <fullName>Risk_Classification__c</fullName>
+        <label>Risk Classification</label>
+        <required>true</required>
+        <type>MetadataRelationship</type>
+        <referenceTo>App_Risk_Classification__mdt</referenceTo>
+    </fields>
+    <fields>
+        <fullName>Business_Purpose__c</fullName>
+        <label>Business Purpose</label>
+        <required>true</required>
+        <type>LongTextArea</type>
+        <length>32768</length>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Last_Review_Date__c</fullName>
+        <label>Last Review Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Next_Review_Date__c</fullName>
+        <label>Next Review Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>High_Risk_Permissions_Justification__c</fullName>
+        <label>High-Risk Permissions Justification</label>
+        <type>LongTextArea</type>
+        <length>32768</length>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Decommission_Reason__c</fullName>
+        <label>Decommission Reason</label>
+        <type>Picklist</type>
+        <picklist>
+            <picklistValues>
+                <fullName>Redundant Functionality</fullName>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vendor Replaced</fullName>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low Adoption</fullName>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Security Risk</fullName>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+            </picklistValues>
+        </picklist>
+    </fields>
+    <fields>
+        <fullName>OAuth_Last_Used_Date__c</fullName>
+        <label>OAuth Last Used Date</label>
+        <type>Date</type>
+    </fields>
+    <validationRules>
+        <fullName>BR004_Enforce_Owner_Required_for_Active_Apps</fullName>
+        <errorConditionFormula>AND(ISPICKVAL(Status__c, "Active"), OR(ISBLANK(Business_Owner__c), ISBLANK(Technical_Owner__c)))</errorConditionFormula>
+        <errorMessage>An active app must have both a Business and Technical Owner assigned.</errorMessage>
+        <active>true</active>
+        <errorLocationField>Business_Owner__c</errorLocationField>
+    </validationRules>
+    <validationRules>
+        <fullName>BR005_Obsolete_Reason_Required</fullName>
+        <errorConditionFormula>AND(ISPICKVAL(Status__c, "Obsolete"), ISBLANK(TEXT(Decommission_Reason__c)))</errorConditionFormula>
+        <errorMessage>A reason must be provided when marking an app as Obsolete.</errorMessage>
+        <active>true</active>
+        <errorLocationField>Decommission_Reason__c</errorLocationField>
+    </validationRules>
+    <recordTypes>
+        <fullName>Default</fullName>
+        <label>Default</label>
+        <active>true</active>
+        <description>Standard governance record type</description>
+    </recordTypes>
+</CustomObject>
