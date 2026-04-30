@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <name>High_Risk_User_Exception_Approval</name>
+    <description>Approval path for exception requests.</description>
+    <tableEnumOrId>High_Risk_User_Exception__c</tableEnumOrId>
+    <active>true</active>
+    <finalApprovalActions>
+        <fieldUpdate>
+            <field>Status__c</field>
+            <name>SetStatusActive</name>
+            <fieldValue>Active</fieldValue>
+        </fieldUpdate>
+        <fieldUpdate>
+            <field>Approved_Date__c</field>
+            <name>StampApprovalDate</name>
+            <fieldValue>=TODAY()</fieldValue>
+        </fieldUpdate>
+    </finalApprovalActions>
+    <initialSubmitters>
+        <user>Platform Administrator</user>
+    </initialSubmitters>
+</ApprovalProcess>

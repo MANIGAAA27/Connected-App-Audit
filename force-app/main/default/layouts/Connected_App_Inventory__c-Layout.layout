@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layoutSections>
+        <detailHeading>Standard Information</detailHeading>
+        <layoutColumns>
+            <layoutItems>
+                <field>App_Name__c</field>
+                <behavior>Edit</behavior>
+            </layoutItems>
+            <layoutItems>
+                <field>API_Name__c</field>
+                <behavior>Edit</behavior>
+            </layoutItems>
+        </layoutColumns>
+    </layoutSections>
+    <layoutSections>
+        <detailHeading>Ownership & Classification</detailHeading>
+        <layoutColumns>
+            <layoutItems>
+                <field>Business_Owner__c</field>
+                <behavior>Edit</behavior>
+            </layoutItems>
+            <layoutItems>
+                <field>Technical_Owner__c</field>
+                <behavior>Edit</behavior>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <field>Risk_Classification__c</field>
+                <behavior>Edit</behavior>
+            </layoutItems>
+            <layoutItems>
+                <field>Status__c</field>
+                <behavior>Edit</behavior>
+            </layoutItems>
+        </layoutColumns>
+    </layoutSections>
+    <layoutSections>
+        <detailHeading>Lifecycle & Review</detailHeading>
+        <layoutColumns>
+            <layoutItems>
+                <field>Last_Review_Date__c</field>
+                <behavior>Edit</behavior>
+            </layoutItems>
+            <layoutItems>
+                <field>Next_Review_Date__c</field>
+                <behavior>Edit</behavior>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <field>High_Risk_Permissions_Justification__c</field>
+                <behavior>Edit</behavior>
+            </layoutItems>
+            <layoutItems>
+                <field>Decommission_Reason__c</field>
+                <behavior>Edit</behavior>
+            </layoutItems>
+        </layoutColumns>
+    </layoutSections>
+    <layoutSections>
+        <detailHeading>Purpose & Context</detailHeading>
+        <layoutColumns>
+            <layoutItems>
+                <field>Business_Purpose__c</field>
+                <behavior>Edit</behavior>
+                <componentInstances>
+                    <componentInstance>
+                        <componentName>ForceRelatedList</componentName>
+                    </componentName>
+                </componentInstances>
+            </layoutItems>
+        </layoutColumns>
+    </layoutSections>
+</Layout>

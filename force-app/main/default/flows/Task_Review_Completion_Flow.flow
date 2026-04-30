@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>When a periodic review Task completes, the connected app review dates are updated.</description>
+    <label>Task Review Completion Flow</label>
+    <processType>AutolaunchedFlow</processType>
+    <status>Active</status>
+    <triggerType>Record</triggerType>
+    <start>
+        <connector>
+            <targetReference>Get_Task</targetReference>
+        </connector>
+    </start>
+    <recordLookups>
+        <name>Get_Task</name>
+        <object>Task</object>
+        <filters>
+            <field>Id</field>
+            <operator>equals</operator>
+            <value>{!$Record.Id}</value>
+        </filters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <connector>
+            <targetReference>Update_Inventory_Review_Date</targetReference>
+        </connector>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Inventory_Review_Date</name>
+        <object>Connected_App_Inventory__c</object>
+        <recordId>{!Get_Task.WhatId}</recordId>
+        <fieldValues>
+            <field>Last_Review_Date__c</field>
+            <value>
+                <stringValue>{!$Flow.CurrentDate}</stringValue>
+            </value>
+        </fieldValues>
+        <fieldValues>
+            <field>Next_Review_Date__c</field>
+            <value>
+                <stringValue>{!$Flow.CurrentDate}</stringString>
+            </value>
+        </fieldValues>
+    </recordUpdates>
+</Flow>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Connected App Inventory with related High Risk User Exceptions.</description>
+    <developerName>ConnectedAppInventoryWithHighRisk</developerName>
+    <label>Connected App Inventory with High Risk Exceptions</label>
+    <primaryObject>Connected_App_Inventory__c</primaryObject>
+    <isActive>true</isActive>
+    <objectRelationships>
+        <childObject>High_Risk_User_Exception__c</childObject>
+        <type>Lookup</type>
+    </objectRelationships>
+</ReportType>

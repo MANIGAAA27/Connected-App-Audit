@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layoutSections>
+        <detailHeading>Exception Overview</detailHeading>
+        <layoutColumns>
+            <layoutItems>
+                <field>User__c</field>
+                <behavior>Edit</behavior>
+            </layoutItems>
+            <layoutItems>
+                <field>Connected_App_Inventory__c</field>
+                <behavior>Edit</behavior>
+            </layoutItems>
+        </layoutColumns>
+    </layoutSections>
+    <layoutSections>
+        <detailHeading>Permission Details</detailHeading>
+        <layoutColumns>
+            <layoutItems>
+                <field>Permission_Set__c</field>
+                <behavior>Edit</behavior>
+            </layoutItems>
+            <layoutItems>
+                <field>Status__c</field>
+                <behavior>Edit</behavior>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <field>Expiration_Date__c</field>
+                <behavior>Edit</behavior>
+            </layoutItems>
+            <layoutItems>
+                <field>Approved_Date__c</field>
+                <behavior>Edit</behavior>
+            </layoutItems>
+        </layoutColumns>
+    </layoutSections>
+    <layoutSections>
+        <detailHeading>Justification</detailHeading>
+        <layoutColumns>
+            <layoutItems>
+                <field>Justification__c</field>
+                <behavior>Edit</behavior>
+            </layoutItems>
+        </layoutColumns>
+    </layoutSections>
+</Layout>

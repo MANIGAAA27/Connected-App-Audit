@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Routes high-risk exception records to Security Reviewers for approval.</description>
+    <label>HRUE Approval Request Flow</label>
+    <processType>AutolaunchedFlow</processType>
+    <status>Active</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <isRequired>true</isRequired>
+    </variables>
+    <recordLookups>
+        <name>Get_Exception</name>
+        <object>High_Risk_User_Exception__c</object>
+        <filters>
+            <field>Id</field>
+            <operator>equals</operator>
+            <value>{!recordId}</value>
+        </filters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <connector>
+            <targetReference>Flag_Pending_Approval</targetReference>
+        </connector>
+    </recordLookups>
+    <recordUpdates>
+        <name>Flag_Pending_Approval</name>
+        <object>High_Risk_User_Exception__c</object>
+        <recordId>{!Get_Exception.Id}</recordId>
+        <fieldValues>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Pending Approval</stringValue>
+            </value>
+        </fieldValues>
+    </recordUpdates>
+    <start>
+        <connector>
+            <targetReference>Get_Exception</targetReference>
+        </connector>
+    </start>
+</Flow>

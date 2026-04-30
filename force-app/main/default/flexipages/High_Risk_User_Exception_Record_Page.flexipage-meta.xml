@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>High Risk User Exception Record Page</description>
+    <masterLabel>High Risk User Exception Record Page</masterLabel>
+    <pageTemplate>OneRegion</pageTemplate>
+    <regions>
+        <name>Region1</name>
+        <components>
+            <componentInstance>
+                <componentName>force:recordView</componentName>
+                <componentInstanceProperties>
+                    <name>recordId</name>
+                    <value>{!recordId}</value>
+                </componentInstanceProperties>
+            </componentInstance>
+        </components>
+    </regions>
+</FlexiPage>

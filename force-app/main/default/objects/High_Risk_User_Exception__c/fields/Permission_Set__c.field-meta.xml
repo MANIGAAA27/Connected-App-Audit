@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Permission_Set__c</fullName>
+    <label>Permission Set</label>
+    <type>Lookup</type>
+    <referenceTo>PermissionSet</referenceTo>
+    <relationshipLabel>Permission Set</relationshipLabel>
+    <relationshipName>Exception_Permission_Set</relationshipName>
+    <required>true</required>
+</CustomField>
