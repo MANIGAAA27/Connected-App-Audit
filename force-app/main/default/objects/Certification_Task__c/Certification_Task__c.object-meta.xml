@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Annual certification task created by scheduled Flow 365 days after Last_Review_Date__c (BR-003). Assigned to the app owner for review confirmation. Overdue escalation to Director of Information Security.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <label>Certification Task</label>
+    <nameField>
+        <displayFormat>CERT-{00000}</displayFormat>
+        <label>Certification Task Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Certification Tasks</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

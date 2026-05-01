@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Records elevated-access requests requiring Security Reviewer approval (FR-09, BR-002). One Request may result in one Approved_Exception__c. Supports emergency flag with auto-expiry enforcement.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <label>Exception Request</label>
+    <nameField>
+        <displayFormat>REQ-{00000}</displayFormat>
+        <label>Request Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Exception Requests</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

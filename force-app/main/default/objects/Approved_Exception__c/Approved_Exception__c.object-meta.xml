@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Records approved exceptions for elevated permissions. Master-Detail child of Exception_Request__c. Expiration_Date__c drives auto-revocation scheduled Flow. Supports SOC 2 CC6.1 audit evidence.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <label>Approved Exception</label>
+    <nameField>
+        <displayFormat>EXC-{00000}</displayFormat>
+        <label>Exception Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Approved Exceptions</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

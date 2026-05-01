@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Permission_Source__c</fullName>
+    <externalId>false</externalId>
+    <label>Permission Source</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value><fullName>Profile</fullName><default>false</default><label>Profile</label></value>
+            <value><fullName>Permission Set</fullName><default>false</default><label>Permission Set</label></value>
+            <value><fullName>Permission Set Group</fullName><default>false</default><label>Permission Set Group</label></value>
+            <value><fullName>Muting Permission Set</fullName><default>false</default><label>Muting Permission Set</label></value>
+            <value><fullName>Effective Permissions</fullName><default>false</default><label>Effective Permissions (Cross-Source)</label></value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
