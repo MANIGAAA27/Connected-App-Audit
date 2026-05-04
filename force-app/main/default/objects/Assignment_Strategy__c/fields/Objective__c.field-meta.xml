@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Objective__c</fullName>
+    <label>Objective</label>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Maximize Revenue</fullName>
+                <label>Maximize Revenue</label>
+            </value>
+            <value>
+                <fullName>Minimize SLA</fullName>
+                <label>Minimize SLA</label>
+            </value>
+            <value>
+                <fullName>Balance Workload</fullName>
+                <label>Balance Workload</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

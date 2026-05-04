@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layoutSections>
+        <detailHeading>Skill Tag Details</detailHeading>
+        <layoutColumns>
+            <layoutItems>
+                <field>Skill_Type__c</field>
+            </layoutItems>
+            <layoutItems>
+                <field>Is_Active__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <field>Related_User__c</field>
+            </layoutItems>
+            <layoutItems>
+                <field>Skill_Level__c</field>
+            </layoutItems>
+        </layoutColumns>
+    </layoutSections>
+    <layoutSections>
+        <heading>Description</heading>
+        <layoutColumns>
+            <layoutItems>
+                <field>Description__c</field>
+            </layoutItems>
+        </layoutColumns>
+    </layoutSections>
+</Layout>

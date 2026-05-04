@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Assignment Rationale">
+        <div class="slds-p-around_small">
+            <template if:true={logEntries}>
+                <template for:each={logEntries} for:item="entry">
+                    <div key={entry.id} class="slds-m-bottom_small">
+                        <p class="slds-text-heading_small">{entry.assignedUserName}</p>
+                        <p class="slds-text-body_small">
+                            Score: {entry.score}
+                            <br />
+                            Reason: {entry.topReason}
+                            <br />
+                            {entry.recommendation}
+                        </p>
+                    </div>
+                </template>
+            </template>
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading rationale" size="small"></lightning-spinner>
+            </template>
+            <template if:true={error}>
+                <div class="slds-text-color_error">{error}</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

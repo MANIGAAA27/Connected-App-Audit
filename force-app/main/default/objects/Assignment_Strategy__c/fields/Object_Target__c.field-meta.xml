@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Object_Target__c</fullName>
+    <label>Object Target</label>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Lead</fullName>
+                <label>Lead</label>
+            </value>
+            <value>
+                <fullName>Case</fullName>
+                <label>Case</label>
+            </value>
+            <value>
+                <fullName>Task</fullName>
+                <label>Task</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
