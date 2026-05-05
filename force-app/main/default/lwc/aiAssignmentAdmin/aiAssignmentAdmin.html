@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="AI Assignment Strategies">
+        <div class="slds-p-around_medium">
+            <template if:true={strategies}>
+                <lightning-datatable
+                    key-field="id"
+                    data={strategies}
+                    columns={columns}>
+                </lightning-datatable>
+            </template>
+            <template if:true={isLoading}>
+                <div class="slds-m-top_medium">
+                    <lightning-spinner alternative-text="Loading strategies" size="small"></lightning-spinner>
+                </div>
+            </template>
+            <template if:true={error}>
+                <div class="slds-text-color_error slds-m-top_medium">{error}</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

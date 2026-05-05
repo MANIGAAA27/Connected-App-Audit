@@ -1,29 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
   <types>
-    <members>App_Risk_Classification__mdt.High.md</members>
-    <members>App_Risk_Classification__mdt.Low.md</members>
-    <members>App_Risk_Classification__mdt.md</members>
-    <members>App_Risk_Classification__mdt.Medium.md</members>
-    <name>CustomMetadata</name>
+    <members>AI_AssignmentAdminController</members>
+    <members>AI_AssignmentCandidateWrapper</members>
+    <members>AI_AssignmentDomain</members>
+    <members>AI_AssignmentFlowInvoker</members>
+    <members>AI_AssignmentHandler</members>
+    <members>AI_AssignmentLogger</members>
+    <members>AI_AssignmentRationaleController</members>
+    <members>AI_AssignmentService</members>
+    <members>AI_AssignmentTest</members>
+    <name>ApexClass</name>
   </types>
   <types>
-    <members>CAI_Approval_Request_Flow</members>
-    <members>CAI_Decommission_Approval_Flow</members>
-    <members>CAI_Scheduled_Periodic_Review_Flow</members>
-    <members>HRUE_Approval_Request_Flow</members>
-    <members>Task_Review_Completion_Flow</members>
+    <members>CaseAssignmentTrigger</members>
+    <members>LeadAssignmentTrigger</members>
+    <members>TaskAssignmentTrigger</members>
+    <name>ApexTrigger</name>
+  </types>
+  <types>
+    <members>AI_AssignmentFlow</members>
     <name>Flow</name>
   </types>
   <types>
-    <members>Connected_App_Inventory__c-Layout</members>
-    <members>High_Risk_User_Exception__c-Layout</members>
+    <members>Assignment_Log__c-Assignment Log Layout</members>
+    <members>Assignment_Strategy__c-Assignment Strategy Layout</members>
+    <members>Performance_Metric__c-Performance Metric Layout</members>
+    <members>Skill_Tag__c-Skill Tag Layout</members>
     <name>Layout</name>
   </types>
   <types>
-    <members>Connected_App_Inventory__c</members>
-    <members>High_Risk_User_Exception__c</members>
+    <members>aiAssignmentAdmin</members>
+    <members>assignmentRationale</members>
+    <name>LightningComponentBundle</name>
+  </types>
+  <types>
+    <members>Assignment_Log__c</members>
+    <members>Assignment_Strategy__c</members>
+    <members>Case</members>
+    <members>Lead</members>
+    <members>Performance_Metric__c</members>
+    <members>Skill_Tag__c</members>
+    <members>Task</members>
     <name>CustomObject</name>
+  </types>
+  <types>
+    <members>AI_Assignment_Admin</members>
+    <name>PermissionSet</name>
   </types>
   <version>59.0</version>
 </Package>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Screen flow that invokes the AI assignment engine.</description>
+    <label>AI Assignment Flow</label>
+    <processType>Flow</processType>
+    <status>Active</status>
+    <variables>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <name>recordIdInput</name>
+    </variables>
+    <variables>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <name>objectTypeInput</name>
+    </variables>
+    <actionCalls>
+        <actionName>AI_AssignmentFlowInvoker.assignRecordsViaFlow</actionName>
+        <inputParameters>
+            <name>recordId</name>
+            <value>{!recordIdInput}</value>
+        </inputParameters>
+        <inputParameters>
+            <name>objectType</name>
+            <value>{!objectTypeInput}</value>
+        </inputParameters>
+        <label>Execute AI Assignment</label>
+        <name>AI_Assignment_Action</name>
+    </actionCalls>
+    <start>
+        <connector>
+            <targetReference>AI_Assignment_Action</targetReference>
+        </connector>
+    </start>
+</Flow>

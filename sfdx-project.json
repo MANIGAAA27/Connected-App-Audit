@@ -3,12 +3,12 @@
     {
       "path": "force-app",
       "default": true,
-      "package": "Connected_App_Audit_10",
+      "package": "AI-Driven_Assignment_Optimizer",
       "versionName": "ver 0.1",
       "versionNumber": "0.1.0.NEXT"
     }
   ],
-  "name": "Connected_App_Audit_10",
+  "name": "AI-Driven_Assignment_Optimizer",
   "namespace": "",
   "sourceApiVersion": "59.0",
   "sfdcLoginUrl": "https://login.salesforce.com"
