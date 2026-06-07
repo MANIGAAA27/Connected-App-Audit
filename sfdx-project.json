@@ -3,13 +3,13 @@
     {
       "path": "force-app",
       "default": true,
-      "package": "Connected_App_Audit_2_0",
+      "package": "sfdx-project",
       "versionName": "ver 0.1",
       "versionNumber": "0.1.0.NEXT"
     }
   ],
-  "name": "Connected_App_Audit_2_0",
+  "name": "sfdx-project",
   "namespace": "",
-  "sourceApiVersion": "59.0",
+  "sourceApiVersion": "60.0",
   "sfdcLoginUrl": "https://login.salesforce.com"
 }
